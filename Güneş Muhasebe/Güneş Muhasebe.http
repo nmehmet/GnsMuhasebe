@@ -1,0 +1,6 @@
+@Güneş_Muhasebe_HostAddress = http://localhost:5246
+
+GET {{Güneş_Muhasebe_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
