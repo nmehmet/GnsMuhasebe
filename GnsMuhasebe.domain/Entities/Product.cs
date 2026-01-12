@@ -2,11 +2,11 @@
 {
     public class Product : BaseEntity
     {   
-        private string Name { get; set; } = string.Empty;
-        private string? Description { get; set; }
-        private int Stock { get; set; }
-        private float PurchasePrice { get; set; }
-        private float SalePrice { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string? Description { get; set; }
+        public int Stock { get; set; }
+        public decimal PurchasePrice { get; set; }
+        public decimal SalePrice { get; set; }
 
     }
 }

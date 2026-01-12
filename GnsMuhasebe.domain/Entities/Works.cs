@@ -2,9 +2,9 @@
 {
     public class Works : BaseEntity
     {
-        private int EmployeeId { get; set; }
-        private string? Description { get; set; } = string.Empty;
-        private enum Type : byte
+        public int EmployeeId { get; set; }
+        public string? Description { get; set; } = string.Empty;
+        public enum Type : byte
         {
             /// <summary>
             /// Products given to employee to work on
@@ -22,8 +22,8 @@
         /// <summary>
         /// Products that given to employee to work on or returned by employee after work
         /// </summary>
-        private List<WorkItem>? WorkItems { get; set; } = new();
-        private float CurrentSalary { get; set; }
-        private float TotalAmount { get; set; }
+        public List<WorkItem>? WorkItems { get; set; } = new();
+        public decimal CurrentSalary { get; set; }
+        public decimal TotalAmount { get; set; }
     }
 }

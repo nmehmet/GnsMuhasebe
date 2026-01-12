@@ -2,9 +2,9 @@
 {
     public class Suppliers : BaseEntity
     {
-        private string Name { get; set; } = string.Empty;
-        private string? Description { get; set; }
-        private string PhoneNumber { get; set; } = string.Empty;
-        private float Balance { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string? Description { get; set; }
+        public string PhoneNumber { get; set; } = string.Empty;
+        public decimal Balance { get; set; }
     }
 }

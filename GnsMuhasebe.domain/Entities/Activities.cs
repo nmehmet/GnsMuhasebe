@@ -2,10 +2,10 @@
 {
     public class Activities : BaseEntity
     {
-        private float TotalAmount { get; set; }
-        private float CashAmount { get; set; }
-        private float CreditAmount { get; set; }
-        private enum SaleType : byte 
+        public decimal TotalAmount { get; set; }
+        public decimal CashAmount { get; set; }
+        public decimal CreditAmount { get; set; }
+        public enum SaleType : byte 
         {
             /// <summary>
             /// Sale(1) = Selling a product
@@ -31,10 +31,10 @@
             /// Salary(6) = Paying salaries for employees
             /// </summary>
             Salary = 6 }
-        private string? Description { get; set; }
-        private int? AccounterId { get; set; }
-        private int? SupplierId { get; set; }
-        private int? EmployeeId { get; set; }
-        private List<SaleItem> SaleItems { get; set; } = new();
+        public string? Description { get; set; }
+        public int? AccounterId { get; set; }
+        public int? SupplierId { get; set; }
+        public int? EmployeeId { get; set; }
+        public List<SaleItem> SaleItems { get; set; } = new();
     }
 }

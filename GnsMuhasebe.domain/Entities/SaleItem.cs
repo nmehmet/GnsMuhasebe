@@ -2,10 +2,10 @@
 {
     public class SaleItem : BaseEntity
     {
-        private int SaleId { get; set; }
-        private int ProductId { get; set; }
-        private int Quantity { get; set; }
-        private float UnitCurrentPrice { get; set; }
-        private Product Product { get; set; } = null!;
+        public int SaleId { get; set; }
+        public int ProductId { get; set; }
+        public int Quantity { get; set; }
+        public decimal UnitCurrentPrice { get; set; }
+        public Product Product { get; set; } = null!;
     }
 }

@@ -2,9 +2,9 @@
 {
     public class Employee : BaseEntity
     {
-        private string Name { get; set; } = string.Empty;
-        private string? PhoneNumber { get; set; }
-        private float Balance { get; set; }
-        private float Salary { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string? PhoneNumber { get; set; }
+        public decimal Balance { get; set; }
+        public decimal Salary { get; set; }
     }
 }

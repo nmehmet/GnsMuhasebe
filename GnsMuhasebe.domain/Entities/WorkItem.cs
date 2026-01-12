@@ -8,9 +8,9 @@ namespace GnsMuhasebe.domain.Entities
 {
     public class WorkItem : BaseEntity
     {
-        private int WorkId { get; set; }
-        private int ProductId { get; set; }
-        private Product Product { get; set; } = null!;
-        private int Quantity { get; set; }
+        public int WorkId { get; set; }
+        public int ProductId { get; set; }
+        public Product Product { get; set; } = null!;
+        public int Quantity { get; set; }
     }
 }
