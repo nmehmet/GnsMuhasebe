@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GnsMuhasebe.Infrastucture.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260112181118_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20260119224734_GnsMuhasebe")]
+    partial class GnsMuhasebe
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,9 @@ namespace GnsMuhasebe.Infrastucture.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<byte>("AccountingType")
                         .HasColumnType("INTEGER");
 
                     b.Property<decimal>("Amount")
@@ -59,6 +62,9 @@ namespace GnsMuhasebe.Infrastucture.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("AccounterId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<byte>("ActivityType")
                         .HasColumnType("INTEGER");
 
                     b.Property<decimal>("CashAmount")
@@ -172,6 +178,9 @@ namespace GnsMuhasebe.Infrastucture.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("IsDeleted")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<byte>("PurchaseType")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("SupplierId")
@@ -362,6 +371,9 @@ namespace GnsMuhasebe.Infrastucture.Migrations
 
                     b.Property<DateTime>("UpdatedOn")
                         .HasColumnType("TEXT");
+
+                    b.Property<byte>("WorkType")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

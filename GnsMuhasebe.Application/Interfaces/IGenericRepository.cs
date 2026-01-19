@@ -28,7 +28,7 @@ namespace GnsMuhasebe.Application.Interfaces
         /// </summary>
         /// <param name="entity">Item to adding <typeparamref name="T"/> table.</param>
         /// <returns></returns>
-        Task AddAsync(T entity);
+        Task<int> AddAsync(T entity);
         /// <summary>
         /// Updates item in <typeparamref name="T"/> table.
         /// </summary>

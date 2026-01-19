@@ -19,6 +19,7 @@
             /// </summary>
             SalaryPaid = 3
         }
+        public Type WorkType { get; set; }
         /// <summary>
         /// Products that given to employee to work on or returned by employee after work
         /// </summary>

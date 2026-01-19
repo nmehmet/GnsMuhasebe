@@ -5,14 +5,14 @@
         public decimal TotalAmount { get; set; }
         public decimal CashAmount { get; set; }
         public decimal CreditAmount { get; set; }
-        public enum SaleType : byte 
+        public enum Type : byte 
         {
             /// <summary>
             /// Sale(1) = Selling a product
             /// </summary>
             Sale = 1,
             /// <summary>
-            /// Debt(2) = Selling without taking money,
+            /// Debt(2) = Selling without takin g money,
             /// </summary>
             Debt = 2,
             /// <summary>
@@ -30,7 +30,9 @@
             /// <summary>
             /// Salary(6) = Paying salaries for employees
             /// </summary>
-            Salary = 6 }
+            Salary = 6 
+        }
+        public Type ActivityType { get; set; }
         public string? Description { get; set; }
         public int? AccounterId { get; set; }
         public int? SupplierId { get; set; }

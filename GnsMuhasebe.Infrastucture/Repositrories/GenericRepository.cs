@@ -30,10 +30,11 @@ namespace GnsMuhasebe.Infrastucture.Repositrories
             return await _context.Set<T>().Where(predicate).ToListAsync();
         }
 
-        public async Task AddAsync(T entity)
+        public async Task<int> AddAsync(T entity)
         {
             entity.CreatedOn = DateTime.UtcNow;
             await _context.Set<T>().AddAsync(entity);
+            return await _context.SaveChangesAsync();
         }
 
         public void Update(T entity)

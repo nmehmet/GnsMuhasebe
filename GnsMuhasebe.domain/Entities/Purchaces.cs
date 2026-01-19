@@ -2,7 +2,6 @@
 {
     public class Purchaces : BaseEntity
     {
-        public int SupplierId { get; set; }
         public enum Type : byte
         {
             /// <summary>
@@ -14,6 +13,8 @@
             /// </summary>
             Payment = 2
         }
+        public int SupplierId { get; set; }
+        public Type PurchaseType { get; set; }
         public List<PurchaseItem> PurchaseItems { get; set; } = new();
         public decimal TotalAmount { get; set; }
     }

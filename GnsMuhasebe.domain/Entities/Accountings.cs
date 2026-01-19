@@ -2,7 +2,7 @@
 {
     public class Accountings : BaseEntity
     {
-        public enum AccountingType : byte
+        public enum Type : byte
         {
             /// <summary>
             /// Paying Salary for employees
@@ -13,6 +13,7 @@
             /// </summary>
             Debt = 2
         }
+        public Type AccountingType { get; set; }
         public int EmployeeId { get; set; }
         public decimal Amount { get; set; }
         public decimal BalanceAfterTransaction { get; set; }

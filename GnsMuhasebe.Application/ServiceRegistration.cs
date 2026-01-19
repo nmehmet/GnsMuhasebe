@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using GnsMuhasebe.Application.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
 namespace GnsMuhasebe.Application

@@ -1,9 +1,6 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using GnsMuhasebe.Application.Features.Commands.CreateProduct;
+using GnsMuhasebe.domain.Entities;
 
 namespace GnsMuhasebe.Application.Mappings
 {
@@ -11,7 +8,7 @@ namespace GnsMuhasebe.Application.Mappings
     {
         public MappingProfile() 
         {
-            //Place Mappings Here
+            CreateMap<Product,CreateProductRequest>().ReverseMap();
         }
     }
 }

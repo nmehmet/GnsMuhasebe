@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace GnsMuhasebe.Infrastucture.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class GnsMuhasebe : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,6 +17,7 @@ namespace GnsMuhasebe.Infrastucture.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    AccountingType = table.Column<byte>(type: "INTEGER", nullable: false),
                     EmployeeId = table.Column<int>(type: "INTEGER", nullable: false),
                     Amount = table.Column<decimal>(type: "TEXT", nullable: false),
                     BalanceAfterTransaction = table.Column<decimal>(type: "TEXT", nullable: false),
@@ -39,6 +40,7 @@ namespace GnsMuhasebe.Infrastucture.Migrations
                     TotalAmount = table.Column<decimal>(type: "TEXT", nullable: false),
                     CashAmount = table.Column<decimal>(type: "TEXT", nullable: false),
                     CreditAmount = table.Column<decimal>(type: "TEXT", nullable: false),
+                    ActivityType = table.Column<byte>(type: "INTEGER", nullable: false),
                     Description = table.Column<string>(type: "TEXT", nullable: true),
                     AccounterId = table.Column<int>(type: "INTEGER", nullable: true),
                     SupplierId = table.Column<int>(type: "INTEGER", nullable: true),
@@ -98,6 +100,7 @@ namespace GnsMuhasebe.Infrastucture.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     SupplierId = table.Column<int>(type: "INTEGER", nullable: false),
+                    PurchaseType = table.Column<byte>(type: "INTEGER", nullable: false),
                     TotalAmount = table.Column<decimal>(type: "TEXT", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "TEXT", nullable: false),
                     UpdatedOn = table.Column<DateTime>(type: "TEXT", nullable: false),
@@ -135,6 +138,7 @@ namespace GnsMuhasebe.Infrastucture.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     EmployeeId = table.Column<int>(type: "INTEGER", nullable: false),
                     Description = table.Column<string>(type: "TEXT", nullable: true),
+                    WorkType = table.Column<byte>(type: "INTEGER", nullable: false),
                     CurrentSalary = table.Column<decimal>(type: "TEXT", nullable: false),
                     TotalAmount = table.Column<decimal>(type: "TEXT", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "TEXT", nullable: false),

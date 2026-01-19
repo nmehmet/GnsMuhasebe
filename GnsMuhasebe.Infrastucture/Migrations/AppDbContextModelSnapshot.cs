@@ -23,6 +23,9 @@ namespace GnsMuhasebe.Infrastucture.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<byte>("AccountingType")
+                        .HasColumnType("INTEGER");
+
                     b.Property<decimal>("Amount")
                         .HasColumnType("TEXT");
 
@@ -56,6 +59,9 @@ namespace GnsMuhasebe.Infrastucture.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("AccounterId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<byte>("ActivityType")
                         .HasColumnType("INTEGER");
 
                     b.Property<decimal>("CashAmount")
@@ -169,6 +175,9 @@ namespace GnsMuhasebe.Infrastucture.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("IsDeleted")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<byte>("PurchaseType")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("SupplierId")
@@ -359,6 +368,9 @@ namespace GnsMuhasebe.Infrastucture.Migrations
 
                     b.Property<DateTime>("UpdatedOn")
                         .HasColumnType("TEXT");
+
+                    b.Property<byte>("WorkType")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
