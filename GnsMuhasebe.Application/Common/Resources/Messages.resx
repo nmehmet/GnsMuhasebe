@@ -123,4 +123,13 @@
   <data name="Error_1001" xml:space="preserve">
     <value>İstek boş.</value>
   </data>
+  <data name="Error_1002" xml:space="preserve">
+    <value>İsim alanı boş.</value>
+  </data>
+  <data name="Error_1003" xml:space="preserve">
+    <value>Hatali Stock değeri.</value>
+  </data>
+  <data name="Error_1004" xml:space="preserve">
+    <value>Hatali satış fiyatı.</value>
+  </data>
 </root>

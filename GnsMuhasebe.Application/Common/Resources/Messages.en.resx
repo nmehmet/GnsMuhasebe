@@ -123,4 +123,13 @@
   <data name="Error_1001" xml:space="preserve">
     <value>Request is empty.</value>
   </data>
+  <data name="Error_1002" xml:space="preserve">
+    <value>Name section is empty.</value>
+  </data>
+  <data name="Error_1003" xml:space="preserve">
+    <value>Invalid stock value/</value>
+  </data>
+  <data name="Error_1004" xml:space="preserve">
+    <value>Invalid sale price value.</value>
+  </data>
 </root>

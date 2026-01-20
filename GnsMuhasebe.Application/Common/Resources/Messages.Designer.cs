@@ -70,6 +70,33 @@ namespace GnsMuhasebe.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to İsim alanı boş..
+        /// </summary>
+        public static string Error_1002 {
+            get {
+                return ResourceManager.GetString("Error_1002", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hatali Stock değeri..
+        /// </summary>
+        public static string Error_1003 {
+            get {
+                return ResourceManager.GetString("Error_1003", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hatali satış fiyatı..
+        /// </summary>
+        public static string Error_1004 {
+            get {
+                return ResourceManager.GetString("Error_1004", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to İşlem başarı ile tamamlandı..
         /// </summary>
         public static string Error_200 {

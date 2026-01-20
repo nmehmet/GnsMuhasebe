@@ -28,7 +28,7 @@ namespace GnsMuhasebe.Application.Interfaces
         /// </summary>
         /// <param name="entity">Item to adding <typeparamref name="T"/> table.</param>
         /// <returns></returns>
-        Task<int> AddAsync(T entity);
+        Task AddAsync(T entity);
         /// <summary>
         /// Updates item in <typeparamref name="T"/> table.
         /// </summary>
@@ -40,6 +40,6 @@ namespace GnsMuhasebe.Application.Interfaces
         /// <param name="entity">Item that wanted to be deleted.</param>
         void Delete(T entity);
 
-        Task<int> SaveChangesAsync();
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

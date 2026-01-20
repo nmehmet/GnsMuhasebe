@@ -30,11 +30,11 @@ namespace GnsMuhasebe.Infrastucture.Repositrories
             return await _context.Set<T>().Where(predicate).ToListAsync();
         }
 
-        public async Task<int> AddAsync(T entity)
+        public async Task AddAsync(T entity)
         {
-            entity.CreatedOn = DateTime.UtcNow;
+            DateTime now = DateTime.Now;
+            entity.CreatedOn = new DateTime(now.Year, now.Month, now.Day, now.Hour, now.Minute, now.Second);
             await _context.Set<T>().AddAsync(entity);
-            return await _context.SaveChangesAsync();
         }
 
         public void Update(T entity)
@@ -48,9 +48,9 @@ namespace GnsMuhasebe.Infrastucture.Repositrories
             _context.Set<T>().Remove(entity);
         }
 
-        public async Task<int> SaveChangesAsync()
+        public async Task<int> SaveChangesAsync(CancellationToken cancellationToken)
         {
-            return await _context.SaveChangesAsync();
+            return await _context.SaveChangesAsync(cancellationToken);
         }
     }
 }
