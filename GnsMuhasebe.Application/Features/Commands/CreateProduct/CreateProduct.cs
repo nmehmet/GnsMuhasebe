@@ -14,15 +14,18 @@ namespace GnsMuhasebe.Application.Features.Commands.CreateProduct
             UndefinedName = 1002,
             UndefinedStock = 1003,
             UndefinedSalePrice = 1004,
-            CouldNotAddedToTable = 1005
+            CouldNotAddedToTable = 1005,
+            CouldNotFindCategory = 1006,
         }
         private readonly IGenericRepository<Product> productRepository;
+        private readonly IGenericRepository<Category> categoryRepository;
         private readonly IMapper mapper;
 
-        public CreateProduct(IGenericRepository<Product> _repository, IMapper _mapper)
-        {
+        public CreateProduct(IGenericRepository<Product> _productRepository,IGenericRepository<Category> _categoryRepository, IMapper _mapper)
+        {    
             mapper = _mapper;
-            productRepository = _repository;
+            productRepository = _productRepository;
+            categoryRepository = _categoryRepository;
         }
 
         public async Task<CreateProductResponse> Handle(CreateProductRequest request, CancellationToken cancellationToken)
@@ -33,6 +36,7 @@ namespace GnsMuhasebe.Application.Features.Commands.CreateProduct
             else if (String.IsNullOrEmpty(request.Name)) response.SetStatus((int)ErrorCodes.UndefinedName);
             else if (request.Stock <= 0) response.SetStatus((int)ErrorCodes.UndefinedStock);
             else if (request.SalePrice <= 0) response.SetStatus((int)ErrorCodes.UndefinedSalePrice);
+            else if (await categoryRepository.GetByIdAsync(request.CategoryId) == null) response.SetStatus((int)ErrorCodes.CouldNotFindCategory);
             else
             {
                 Product product = mapper.Map<Product>(request);

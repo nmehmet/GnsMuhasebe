@@ -132,4 +132,13 @@
   <data name="Error_1004" xml:space="preserve">
     <value>Hatali satış fiyatı.</value>
   </data>
+  <data name="Error_1005" xml:space="preserve">
+    <value>Ürün eklenirken bir hata oldu.</value>
+  </data>
+  <data name="Error_1006" xml:space="preserve">
+    <value>Categori bulunamadı.</value>
+  </data>
+  <data name="Error_1011" xml:space="preserve">
+    <value>Geçersiz isim alanı.</value>
+  </data>
 </root>

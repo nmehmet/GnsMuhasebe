@@ -10,6 +10,7 @@ namespace GnsMuhasebe.Infrastucture.Persistance
         }
 
         public DbSet<Product> Product { get; set; }
+        public DbSet<Category> Category { get; set; }
         public DbSet<Accountings> Accountings { get; set; }
         public DbSet<Activities> Activities { get; set; }
         public DbSet<Employee> Employee { get; set; }

@@ -132,4 +132,13 @@
   <data name="Error_1004" xml:space="preserve">
     <value>Invalid sale price value.</value>
   </data>
+  <data name="Error_1005" xml:space="preserve">
+    <value>Product could not be added.</value>
+  </data>
+  <data name="Error_1006" xml:space="preserve">
+    <value>Category could not found.</value>
+  </data>
+  <data name="Error_1011" xml:space="preserve">
+    <value>Invalid name.</value>
+  </data>
 </root>

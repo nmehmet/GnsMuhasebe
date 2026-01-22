@@ -97,6 +97,33 @@ namespace GnsMuhasebe.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ürün eklenirken bir hata oldu..
+        /// </summary>
+        public static string Error_1005 {
+            get {
+                return ResourceManager.GetString("Error_1005", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Categori bulunamadı..
+        /// </summary>
+        public static string Error_1006 {
+            get {
+                return ResourceManager.GetString("Error_1006", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Geçersiz isim alanı..
+        /// </summary>
+        public static string Error_1011 {
+            get {
+                return ResourceManager.GetString("Error_1011", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to İşlem başarı ile tamamlandı..
         /// </summary>
         public static string Error_200 {
