@@ -9,6 +9,6 @@ namespace GnsMuhasebe.Application.Features.Commands.CreateProduct
         public int CategoryId {  get; set; }
         public int Stock { get; set; }
         public decimal SalePrice { get; set; }
-        public decimal? PurchasePrice { get; set; }
+        public decimal PurchasePrice { get; set; }
     }
 }

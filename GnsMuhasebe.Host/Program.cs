@@ -1,6 +1,7 @@
 using GnsMuhasebe.Application;
 using GnsMuhasebe.Infrastucture;
 using GnsMuhasebe.Infrastucture.Persistance;
+using Güneþ_Muhasebe.Middlewares;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,6 +29,8 @@ var localizationOptions = new RequestLocalizationOptions()
     .AddSupportedUICultures(supportedLanguages);
 
 app.UseRequestLocalization(localizationOptions);
+
+app.UseMiddleware<GlobalExceptionMiddleware>();
     
 
 // Configure the HTTP request pipeline.

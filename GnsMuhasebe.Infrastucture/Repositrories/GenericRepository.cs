@@ -32,14 +32,11 @@ namespace GnsMuhasebe.Infrastucture.Repositrories
 
         public async Task AddAsync(T entity)
         {
-            DateTime now = DateTime.Now;
-            entity.CreatedOn = new DateTime(now.Year, now.Month, now.Day, now.Hour, now.Minute, now.Second);
             await _context.Set<T>().AddAsync(entity);
         }
 
         public void Update(T entity)
-        {
-            entity.UpdatedOn = DateTime.UtcNow;
+        {;
             _context.Set<T>().Update(entity);
         }
 

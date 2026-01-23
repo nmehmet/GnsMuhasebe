@@ -39,7 +39,7 @@ namespace GnsMuhasebe.Application.Features.Commands.CreateProduct
             else if (await categoryRepository.GetByIdAsync(request.CategoryId) == null) response.SetStatus((int)ErrorCodes.CouldNotFindCategory);
             else
             {
-                Product product = mapper.Map<Product>(request);
+                Product product = new Product(request.Name, request.CategoryId, request.Description, request.Stock, request.PurchasePrice, request.SalePrice);
                 try
                 {
                     await productRepository.AddAsync(product);

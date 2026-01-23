@@ -12,7 +12,7 @@ namespace GnsMuhasebe.Application.Features.Commands.SellProduct
             Success = 200,
             ProductCouldNotFound = 1007,
             NotEnoughProduct = 1008,
-            ProductCouldNotUpdated
+            ProductCouldNotUpdated = 1009
 
         }
         private readonly IGenericRepository<Product> _productRepository;
@@ -28,11 +28,13 @@ namespace GnsMuhasebe.Application.Features.Commands.SellProduct
             try
             {
                 Product? product = await _productRepository.GetByIdAsync(request.ProductId);
+
+
                 if (product == null) response.SetStatus((int)ErrorCodes.ProductCouldNotFound);
                 else if (product.Stock < request.ProductQuantity) response.SetStatus((int)ErrorCodes.NotEnoughProduct);
                 else
                 {
-                    product.Stock -= request.ProductQuantity;
+                    product.DecreaseStock(request.ProductQuantity);
                     _productRepository.Update(product);
                     int result = _productRepository.SaveChangesAsync(cancellationToken).Result;
                     if (result == 0) response.SetStatus((int)ErrorCodes.ProductCouldNotUpdated);
