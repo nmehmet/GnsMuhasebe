@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnsMuhasebe.host", "Güneş Muhasebe\GnsMuhasebe.host.csproj", "{4270DAAA-ADA9-4B78-8F12-FF4A3869CA10}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnsMuhasebe.domain", "GnsMuhasebe.domain\GnsMuhasebe.domain.csproj", "{5BB54E44-614B-4CE6-940B-63B5FBB141C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnsMuhasebe.Infrastucture", "GnsMuhasebe.Infrastucture\GnsMuhasebe.Infrastucture.csproj", "{AEC5DD93-CFE7-4B2C-B8DD-E83AF4B9A58E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnsMuhasebe.Infrastructure", "GnsMuhasebe.Infrastucture\GnsMuhasebe.Infrastructure.csproj", "{AEC5DD93-CFE7-4B2C-B8DD-E83AF4B9A58E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnsMuhasebe.Application", "GnsMuhasebe.Application\GnsMuhasebe.Application.csproj", "{B5726E08-09BA-4AC1-86C5-12204520E327}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnsMuhasebe.host", "GnsMuhasebe.Host\GnsMuhasebe.host.csproj", "{CCECF16B-2B91-37D5-3BDF-F96599228DE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4270DAAA-ADA9-4B78-8F12-FF4A3869CA10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4270DAAA-ADA9-4B78-8F12-FF4A3869CA10}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4270DAAA-ADA9-4B78-8F12-FF4A3869CA10}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4270DAAA-ADA9-4B78-8F12-FF4A3869CA10}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5BB54E44-614B-4CE6-940B-63B5FBB141C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5BB54E44-614B-4CE6-940B-63B5FBB141C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BB54E44-614B-4CE6-940B-63B5FBB141C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{B5726E08-09BA-4AC1-86C5-12204520E327}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5726E08-09BA-4AC1-86C5-12204520E327}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5726E08-09BA-4AC1-86C5-12204520E327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCECF16B-2B91-37D5-3BDF-F96599228DE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCECF16B-2B91-37D5-3BDF-F96599228DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCECF16B-2B91-37D5-3BDF-F96599228DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCECF16B-2B91-37D5-3BDF-F96599228DE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
