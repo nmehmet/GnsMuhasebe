@@ -37,6 +37,6 @@
         public int? AccounterId { get; set; }
         public int? SupplierId { get; set; }
         public int? EmployeeId { get; set; }
-        public List<SaleItem> SaleItems { get; set; } = new();
+        public List<SaleItem>? SaleItems { get; set; } = new();
     }
 }

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GnsMuhasebe.Infrastucture.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260122115118_GnsDukkan")]
+    [Migration("20260123162557_GnsDukkan")]
     partial class GnsDukkan
     {
         /// <inheritdoc />
@@ -272,6 +272,9 @@ namespace GnsMuhasebe.Infrastucture.Migrations
                     b.Property<int?>("ActivitiesId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("ActivityId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("TEXT");
 
@@ -282,9 +285,6 @@ namespace GnsMuhasebe.Infrastucture.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Quantity")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("SaleId")
                         .HasColumnType("INTEGER");
 
                     b.Property<decimal>("UnitCurrentPrice")

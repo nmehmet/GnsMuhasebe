@@ -1,7 +1,7 @@
 ﻿using GnsMuhasebe.Application.Features.Commands.CreateProduct;
+using GnsMuhasebe.Application.Features.Commands.SellProduct;
 using GnsMuhasebe.Application.Interfaces;
 using GnsMuhasebe.domain.Entities;
-using GnsMuhasebe.Infrastucture.Repositrories;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,8 +21,21 @@ namespace Güneş_Muhasebe.Controllers
         [HttpPost("CreateProduct")]
         public async Task<IActionResult> CreateProduct(CreateProductRequest request)
         {
-            var response = await _mediator.Send(request);
+            CreateProductResponse response = await _mediator.Send(request);
             return StatusCode(response.Status , response);
+        }
+        [HttpPost("SellProduct/{Id:int}/{Quantity:int}")]
+        public async Task<IActionResult> SellProduct(SellProductRequest request, int Id, int Quantity)
+        {
+            request.ProductId = Id;
+            request.ProductQuantity = Quantity;
+            SellProductResponse response = await _mediator.Send(request);
+            return StatusCode(response.Status,response);
+        }
+        [HttpGet("GetProductById/{Id:int}")]
+        public async Task<Product> GetProductById(int Id)
+        {
+            return await _productRepository.GetByIdAsync(Id) ?? new Product();
         }
         [HttpGet("GetAllProducts")]
         public async Task<List<Product>> GetAllProducts()

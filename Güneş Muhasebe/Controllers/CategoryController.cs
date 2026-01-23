@@ -31,7 +31,7 @@ namespace Güneş_Muhasebe.Controllers
         [HttpGet("GetCategoryById{Id:int}")]
         public async Task<Category> GetCategoryById(int Id)
         {
-            return await _categoryRepository.GetByIdAsync(Id);
+            return await _categoryRepository.GetByIdAsync(Id) ?? new Category();
         }
     }
 }

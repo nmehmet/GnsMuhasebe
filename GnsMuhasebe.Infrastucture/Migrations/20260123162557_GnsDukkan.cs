@@ -173,7 +173,7 @@ namespace GnsMuhasebe.Infrastucture.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    SaleId = table.Column<int>(type: "INTEGER", nullable: false),
+                    ActivityId = table.Column<int>(type: "INTEGER", nullable: false),
                     ProductId = table.Column<int>(type: "INTEGER", nullable: false),
                     Quantity = table.Column<int>(type: "INTEGER", nullable: false),
                     UnitCurrentPrice = table.Column<decimal>(type: "TEXT", nullable: false),
