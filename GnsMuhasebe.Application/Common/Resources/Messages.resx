@@ -141,4 +141,10 @@
   <data name="Error_1011" xml:space="preserve">
     <value>Geçersiz isim alanı.</value>
   </data>
+  <data name="Error_1101" xml:space="preserve">
+    <value>Kategori adı geçerli değil.</value>
+  </data>
+  <data name="Error_9999" xml:space="preserve">
+    <value>bilinmeyen hata </value>
+  </data>
 </root>

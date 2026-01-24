@@ -25,7 +25,7 @@ namespace GnsMuhasebe.domain.Entities
         public Product(string name, int categoryId, string? description , int stock, decimal purchasePrice, decimal salePrice) : base()
         {
             if (String.IsNullOrEmpty(name)) throw new BusinessException(BusinessErrorCode.InvalidProductName);
-            if (Stock <= 0) throw new BusinessException(BusinessErrorCode.InvalidStockValue);
+            if (stock <= 0) throw new BusinessException(BusinessErrorCode.InvalidStockValue);
             if (salePrice <= 0) throw new BusinessException(BusinessErrorCode.InvalidSalePrice);
 
             Name = name;

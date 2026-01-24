@@ -48,7 +48,7 @@ namespace Güneş_Muhasebe.Middlewares
             {
                 case BusinessException businessEx:
                     statusCode = (int)HttpStatusCode.BadRequest;
-                    errorCode = (int)BusinessErrorCode.UnknownError;
+                    errorCode = (int)businessEx.ErrorCode;
 
                     searchKey = $"Error_{errorCode}";
                     LocalizedString localizedString = _localizer[searchKey];
@@ -68,6 +68,7 @@ namespace Güneş_Muhasebe.Middlewares
                     _logger.LogError(exception, "Unknown Error!!!");
                     break;
             }
+
             context.Response.StatusCode = statusCode;
 
             var response = new

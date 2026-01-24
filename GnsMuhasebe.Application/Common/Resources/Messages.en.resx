@@ -141,4 +141,11 @@
   <data name="Error_1011" xml:space="preserve">
     <value>Invalid name.</value>
   </data>
+  <data name="Error_1101" xml:space="preserve">
+    <value>Invalid category name.</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Error_9999" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
 </root>
