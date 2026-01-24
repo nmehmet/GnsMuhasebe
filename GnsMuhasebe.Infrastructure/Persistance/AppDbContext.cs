@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using GnsMuhasebe.domain.Entities;
 
-namespace GnsMuhasebe.Infrastucture.Persistance
+namespace GnsMuhasebe.Infrastructure.Persistance
 {
     public class AppDbContext : DbContext
     {

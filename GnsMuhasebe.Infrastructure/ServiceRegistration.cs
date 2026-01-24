@@ -1,5 +1,5 @@
 ﻿using GnsMuhasebe.Application.Interfaces;
-using GnsMuhasebe.Infrastucture.Repositrories;
+using GnsMuhasebe.Infrastructure.Repositrories;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GnsMuhasebe.Infrastucture
+namespace GnsMuhasebe.Infrastructure
 {
     public static class ServiceRegistration
     {

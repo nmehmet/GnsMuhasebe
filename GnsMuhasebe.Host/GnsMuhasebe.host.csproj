@@ -24,7 +24,7 @@
   <ItemGroup>
     <ProjectReference Include="..\GnsMuhasebe.Application\GnsMuhasebe.Application.csproj" />
     <ProjectReference Include="..\GnsMuhasebe.domain\GnsMuhasebe.domain.csproj" />
-    <ProjectReference Include="..\GnsMuhasebe.Infrastucture\GnsMuhasebe.Infrastructure.csproj" />
+    <ProjectReference Include="..\GnsMuhasebe.Infrastructure\GnsMuhasebe.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

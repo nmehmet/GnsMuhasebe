@@ -1,10 +1,10 @@
 ﻿using GnsMuhasebe.Application.Interfaces;
 using GnsMuhasebe.domain.Entities;
-using GnsMuhasebe.Infrastucture.Persistance;
+using GnsMuhasebe.Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace GnsMuhasebe.Infrastucture.Repositrories
+namespace GnsMuhasebe.Infrastructure.Repositrories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {

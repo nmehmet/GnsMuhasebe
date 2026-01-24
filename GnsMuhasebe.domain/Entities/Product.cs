@@ -1,4 +1,8 @@
-﻿namespace GnsMuhasebe.domain.Entities
+﻿using GnsMuhasebe.domain.Enums;
+using GnsMuhasebe.domain.Exceptions;
+using System.Xml.Linq;
+
+namespace GnsMuhasebe.domain.Entities
 {
     public class Product : BaseEntity
     {   
@@ -8,9 +12,22 @@
         public int Stock { get; private set; }
         public decimal PurchasePrice { get; private set; }
         public decimal SalePrice { get; private set; }
-      
-        public Product(string name, int categoryId, string description , int stock, decimal purchasePrice, decimal salePrice) : base()
+
+        public Product()
         {
+            Name = String.Empty;
+            CategoryId = 0;
+            Description = String.Empty;
+            Stock = 0;
+            PurchasePrice = 0;
+            SalePrice = 0;
+        }
+        public Product(string name, int categoryId, string? description , int stock, decimal purchasePrice, decimal salePrice) : base()
+        {
+            if (String.IsNullOrEmpty(name)) throw new BusinessException(BusinessErrorCode.InvalidProductName);
+            if (Stock <= 0) throw new BusinessException(BusinessErrorCode.InvalidStockValue);
+            if (salePrice <= 0) throw new BusinessException(BusinessErrorCode.InvalidSalePrice);
+
             Name = name;
             CategoryId = categoryId;
             Description = description??String.Empty;
@@ -21,7 +38,9 @@
         }
         public void DecreaseStock(int quantity)
         {
-            if (Stock < quantity) Stock -= quantity;
+            if (Stock < quantity) throw new BusinessException(BusinessErrorCode.NotEnoughProductToSell);
+
+            Stock -= quantity;
         }
     }
 }

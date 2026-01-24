@@ -1,6 +1,6 @@
 using GnsMuhasebe.Application;
-using GnsMuhasebe.Infrastucture;
-using GnsMuhasebe.Infrastucture.Persistance;
+using GnsMuhasebe.Infrastructure;
+using GnsMuhasebe.Infrastructure.Persistance;
 using Güneþ_Muhasebe.Middlewares;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,7 +18,7 @@ builder.Services.AddApplicationServices();
 builder.Services.AddInfraStructureServices();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(connectionString,b => b.MigrationsAssembly("GnsMuhasebe.Infrastucture")));
+    options.UseSqlite(connectionString,b => b.MigrationsAssembly("GnsMuhasebe.Infrastructure")));
 
 var app = builder.Build();
 

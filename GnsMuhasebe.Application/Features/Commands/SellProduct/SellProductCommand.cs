@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using GnsMuhasebe.Application.Interfaces;
 using GnsMuhasebe.domain.Entities;
+using GnsMuhasebe.domain.Enums;
+using GnsMuhasebe.domain.Exceptions;
 using MediatR;
 
 namespace GnsMuhasebe.Application.Features.Commands.SellProduct
@@ -25,30 +27,20 @@ namespace GnsMuhasebe.Application.Features.Commands.SellProduct
         public async Task<SellProductResponse> Handle(SellProductRequest request, CancellationToken cancellationToken)
         {
             SellProductResponse response = new SellProductResponse();
-            try
+            
+            
+            Product? product = await _productRepository.GetByIdAsync(request.ProductId);
+
+            if (product == null) throw new BusinessException(BusinessErrorCode.ProductCouldNotFound);
+            
+            product.DecreaseStock(request.ProductQuantity);
+            _productRepository.Update(product);
+            int result = _productRepository.SaveChangesAsync(cancellationToken).Result;
+            if (result == 0) throw new BusinessException(BusinessErrorCode.ProductCouldNotUpdated);
+            else
             {
-                Product? product = await _productRepository.GetByIdAsync(request.ProductId);
-
-
-                if (product == null) response.SetStatus((int)ErrorCodes.ProductCouldNotFound);
-                else if (product.Stock < request.ProductQuantity) response.SetStatus((int)ErrorCodes.NotEnoughProduct);
-                else
-                {
-                    product.DecreaseStock(request.ProductQuantity);
-                    _productRepository.Update(product);
-                    int result = _productRepository.SaveChangesAsync(cancellationToken).Result;
-                    if (result == 0) response.SetStatus((int)ErrorCodes.ProductCouldNotUpdated);
-                    else
-                    {
-                        response.SetStatus((int)ErrorCodes.Success);
-                        response.UpdatedProduct = product;
-                    }
-                }
-
-            }catch (Exception ex)
-            {
-                response.SetStatus(ex.HResult);
-                if (!String.IsNullOrEmpty(ex.Message)) response.Message = ex.Message;
+                response.SetStatus((int)ErrorCodes.Success);
+                response.UpdatedProduct = product;
             }
 
             return response;
