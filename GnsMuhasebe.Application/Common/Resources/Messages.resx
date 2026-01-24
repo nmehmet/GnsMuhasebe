@@ -120,11 +120,11 @@
   <data name="Error_200" xml:space="preserve">
     <value>İşlem başarı ile tamamlandı.</value>
   </data>
-  <data name="Error_1001" xml:space="preserve">
+  <data name="Error_1000" xml:space="preserve">
     <value>İstek boş.</value>
   </data>
   <data name="Error_1002" xml:space="preserve">
-    <value>İsim alanı boş.</value>
+    <value>Geçersiz ürün adı.</value>
   </data>
   <data name="Error_1003" xml:space="preserve">
     <value>Hatali Stock değeri.</value>
@@ -138,13 +138,25 @@
   <data name="Error_1006" xml:space="preserve">
     <value>Categori bulunamadı.</value>
   </data>
-  <data name="Error_1011" xml:space="preserve">
-    <value>Geçersiz isim alanı.</value>
+  <data name="Error_1007" xml:space="preserve">
+    <value>Ürün bulunamadı.</value>
+  </data>
+  <data name="Error_1008" xml:space="preserve">
+    <value>Satış için yeterli ürün bulunmamakta.</value>
+  </data>
+  <data name="Error_1009" xml:space="preserve">
+    <value>Ürün güncellenirken bir hata oluştu.</value>
   </data>
   <data name="Error_1101" xml:space="preserve">
     <value>Kategori adı geçerli değil.</value>
   </data>
+  <data name="Error_1102" xml:space="preserve">
+    <value>Kategori eklenirken bir hata oluştu.</value>
+  </data>
+  <data name="Error_9998" xml:space="preserve">
+    <value>Doğrulama hatası. </value>
+  </data>
   <data name="Error_9999" xml:space="preserve">
-    <value>bilinmeyen hata </value>
+    <value>Bilinmeyen hata!! </value>
   </data>
 </root>
