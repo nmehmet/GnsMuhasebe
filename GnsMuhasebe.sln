@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnsMuhasebe.host", "GnsMuha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnsMuhasebe.Infrastructure", "GnsMuhasebe.Infrastructure\GnsMuhasebe.Infrastructure.csproj", "{EE0D6A6D-833B-0A72-A1F5-6B36B4E19791}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnsMuhasebe.domain.Tests", "GnsMuhasebe.domain.Tests\GnsMuhasebe.domain.Tests.csproj", "{D7362229-2CD4-498B-B6ED-AB2AF19F4E07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EE0D6A6D-833B-0A72-A1F5-6B36B4E19791}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE0D6A6D-833B-0A72-A1F5-6B36B4E19791}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE0D6A6D-833B-0A72-A1F5-6B36B4E19791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7362229-2CD4-498B-B6ED-AB2AF19F4E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7362229-2CD4-498B-B6ED-AB2AF19F4E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7362229-2CD4-498B-B6ED-AB2AF19F4E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7362229-2CD4-498B-B6ED-AB2AF19F4E07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

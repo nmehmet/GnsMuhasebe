@@ -42,5 +42,9 @@ namespace GnsMuhasebe.domain.Entities
 
             Stock -= quantity;
         }
+        public void IncreaseStock(int quantity)
+        {
+            Stock += quantity;
+        }
     }
 }

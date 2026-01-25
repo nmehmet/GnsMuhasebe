@@ -9,14 +9,6 @@ namespace GnsMuhasebe.Application.Features.Commands.SellProduct
 {
     public class SellProductCommand : IRequestHandler<SellProductRequest, SellProductResponse>
     {
-        private enum ErrorCodes : int 
-        {
-            Success = 200,
-            ProductCouldNotFound = 1007,
-            NotEnoughProduct = 1008,
-            ProductCouldNotUpdated = 1009
-
-        }
         private readonly IGenericRepository<Product> _productRepository;
         private readonly IMapper _mapper;
         public SellProductCommand(IGenericRepository<Product> productRepoitory, IMapper mapper)
@@ -37,11 +29,10 @@ namespace GnsMuhasebe.Application.Features.Commands.SellProduct
             _productRepository.Update(product);
             int result = _productRepository.SaveChangesAsync(cancellationToken).Result;
             if (result == 0) throw new BusinessException(BusinessErrorCode.ProductCouldNotUpdated);
-            else
-            {
-                response.SetStatus((int)ErrorCodes.Success);
-                response.UpdatedProduct = product;
-            }
+            
+            response.SetStatus(200);
+            response.UpdatedProduct = product;
+            
 
             return response;
         }
