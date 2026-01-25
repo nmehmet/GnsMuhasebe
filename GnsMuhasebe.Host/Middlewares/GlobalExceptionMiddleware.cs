@@ -6,7 +6,7 @@ using GnsMuhasebe.domain.Enums;
 using GnsMuhasebe.domain.Exceptions;
 using Microsoft.Extensions.Localization;
 
-namespace Güneş_Muhasebe.Middlewares
+namespace GnsMuhasebe.Middlewares
 {
     public class GlobalExceptionMiddleware
     {

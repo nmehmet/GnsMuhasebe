@@ -1,7 +1,7 @@
 using GnsMuhasebe.Application;
 using GnsMuhasebe.Infrastructure;
 using GnsMuhasebe.Infrastructure.Persistance;
-using Güneþ_Muhasebe.Middlewares;
+using GnsMuhasebe.Middlewares;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
