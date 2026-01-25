@@ -24,9 +24,10 @@ namespace GnsMuhasebe.domain.Entities
         }
         public Product(string name, int categoryId, string? description , int stock, decimal purchasePrice, decimal salePrice) : base()
         {
-            if (String.IsNullOrEmpty(name)) throw new BusinessException(BusinessErrorCode.InvalidProductName);
+            if (String.IsNullOrWhiteSpace(name)) throw new BusinessException(BusinessErrorCode.InvalidProductName);
             if (stock <= 0) throw new BusinessException(BusinessErrorCode.InvalidStockValue);
             if (salePrice <= 0) throw new BusinessException(BusinessErrorCode.InvalidSalePrice);
+            if (purchasePrice < 0) throw new BusinessException(BusinessErrorCode.InvalidPurchasePrice);
 
             Name = name;
             CategoryId = categoryId;
@@ -39,11 +40,13 @@ namespace GnsMuhasebe.domain.Entities
         public void DecreaseStock(int quantity)
         {
             if (Stock < quantity) throw new BusinessException(BusinessErrorCode.NotEnoughProductToSell);
+            if (quantity <= 0) throw new BusinessException(BusinessErrorCode.InvalidQuantity);
 
             Stock -= quantity;
         }
         public void IncreaseStock(int quantity)
         {
+            if (quantity <= 0) throw new BusinessException(BusinessErrorCode.InvalidQuantity);
             Stock += quantity;
         }
     }
