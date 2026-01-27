@@ -15,7 +15,7 @@ namespace GnsMuhasebe.domain.Entities
         }
         public Category(string name, string description)
         {
-            if (String.IsNullOrEmpty(name)) throw new BusinessException(BusinessErrorCode.InvalidCategoryName);
+            if (String.IsNullOrWhiteSpace(name)) throw new BusinessException(BusinessErrorCode.InvalidCategoryName);
 
             Name = name;
             Description = description;
