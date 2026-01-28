@@ -23,7 +23,7 @@ namespace GnsMuhasebe.Application.Features.Commands.CreateCategory
             Category category = new Category(request.Name,request.Description ?? String.Empty);
 
             await _categoryRepository.AddAsync(category);
-            int result = _categoryRepository.SaveChangesAsync(cancellationToken).Result;
+            int result = await _categoryRepository.SaveChangesAsync(cancellationToken);
             if (result > 0)
             {
                 response.SetStatus(200);

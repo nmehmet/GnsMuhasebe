@@ -6,19 +6,19 @@ using MediatR;
 
 namespace GnsMuhasebe.Application.Features.Commands.AddProduct
 {
-    public class AddProductCommand : IRequestHandler<AddProductRequest, AddProductResponse>
+    public class IncreaseProductStockCommand : IRequestHandler<IncreaseProductStockRequest, IncreaseProductStockResponse>
     {
         private readonly IGenericRepository<Product> _productRepository;
 
-        public AddProductCommand(IGenericRepository<Product> productRepository)
+        public IncreaseProductStockCommand(IGenericRepository<Product> productRepository)
         {
             _productRepository = productRepository;
         }
 
-        public async Task<AddProductResponse> Handle(AddProductRequest request, CancellationToken canceliationToken)
+        public async Task<IncreaseProductStockResponse> Handle(IncreaseProductStockRequest request, CancellationToken canceliationToken)
         {
             Product? product = await _productRepository.GetByIdAsync(request.ProductId);
-            AddProductResponse response = new AddProductResponse();
+            IncreaseProductStockResponse response = new IncreaseProductStockResponse();
 
             if (product == null) throw new BusinessException(BusinessErrorCode.ProductCouldNotFound);
             product.IncreaseStock(request.Quantity);

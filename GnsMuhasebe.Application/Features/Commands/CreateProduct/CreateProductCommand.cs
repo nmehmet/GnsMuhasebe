@@ -27,19 +27,16 @@ namespace GnsMuhasebe.Application.Features.Commands.CreateProduct
             if (request == null) throw new BusinessException(BusinessErrorCode.RequestIsEmpty);
             if (await categoryRepository.GetByIdAsync(request.CategoryId) == null) throw new BusinessException(BusinessErrorCode.CategoryCouldNotFound);
 
-            else
+            Product product = new Product(request.Name, request.CategoryId, request.Description ?? String.Empty, request.Stock, request.PurchasePrice, request.SalePrice);
+            
+            await productRepository.AddAsync(product);
+            int result = await productRepository.SaveChangesAsync(cancellationToken);
+            if (result > 0)
             {
-                Product product = new Product(request.Name, request.CategoryId, request.Description ?? String.Empty, request.Stock, request.PurchasePrice, request.SalePrice);
-              
-                await productRepository.AddAsync(product);
-                int result = productRepository.SaveChangesAsync(cancellationToken).Result;
-                if (result > 0)
-                {
-                    response.SetStatus(200);
-                    response.AddedProduct = product;
-                }
-                else throw new BusinessException(BusinessErrorCode.ProductCouldNotBeAdded);
+                response.SetStatus(200);
+                response.AddedProduct = product;
             }
+            else throw new BusinessException(BusinessErrorCode.ProductCouldNotBeAdded);
 
             return response; 
         }
