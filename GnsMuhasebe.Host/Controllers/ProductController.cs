@@ -1,5 +1,6 @@
 ﻿using GnsMuhasebe.Application.Features.Commands.ProductCommands.CreateProduct;
 using GnsMuhasebe.Application.Features.Commands.ProductCommands.SellProduct;
+using GnsMuhasebe.Application.Features.Queries.ProductQueries.GetAllProducts;
 using GnsMuhasebe.Application.Features.Queries.ProductQueries.GetProductByBarcode;
 using GnsMuhasebe.Application.Interfaces;
 using GnsMuhasebe.domain.Entities;
@@ -23,7 +24,7 @@ namespace Güneş_Muhasebe.Controllers
         public async Task<IActionResult> CreateProduct(CreateProductRequest request)
         {
             CreateProductResponse response = await _mediator.Send(request);
-            return StatusCode(response.Status , response);
+            return StatusCode(response.Status, response);
         }
         [HttpPost("SellProduct/{Id:int}/{Quantity:int}")]
         public async Task<IActionResult> SellProduct(SellProductRequest request, int Id, int Quantity)
@@ -31,7 +32,7 @@ namespace Güneş_Muhasebe.Controllers
             request.ProductId = Id;
             request.ProductQuantity = Quantity;
             SellProductResponse response = await _mediator.Send(request);
-            return StatusCode(response.Status,response);
+            return StatusCode(response.Status, response);
         }
         [HttpGet("GetProductById/{Id:int}")]
         public async Task<Product> GetProductById(int Id)
@@ -48,10 +49,17 @@ namespace Güneş_Muhasebe.Controllers
             GetProductByBarcodeQueryResponse response = await _mediator.Send(request);
             return StatusCode(response.Status, response);
         }
-        [HttpGet("GetAllProducts")]
+        [HttpGet("GetAllProductsDebug")]
         public async Task<List<Product>> GetAllProducts()
         {
             return await _productRepository.GetAllAsync();
+        }
+        [HttpGet("GetAllProducts")]
+        public async Task<IActionResult> GetAllProductsQuery()
+        {
+            var request = new GetAllProductsQueryRequest();
+            var response = await _mediator.Send(request);
+            return StatusCode(response.Status, response);
         }
     }
 }

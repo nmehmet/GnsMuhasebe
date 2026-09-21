@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GnsMuhasebe.Application.DTOs.Products;
 using GnsMuhasebe.Application.Features.Commands.CategoryCommands.CreateCategory;
 using GnsMuhasebe.Application.Features.Commands.ProductCommands.CreateProduct;
 using GnsMuhasebe.domain.Entities;
@@ -11,6 +12,7 @@ namespace GnsMuhasebe.Application.Mappings
         {
             CreateMap<Product,CreateProductRequest>().ReverseMap();
             CreateMap<Category, CreateCategoryRequest>().ReverseMap();
+            CreateMap<Product, GetAllProductsDTO>().ReverseMap();   
         }
     }
 }
