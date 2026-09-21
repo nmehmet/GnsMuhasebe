@@ -5,7 +5,7 @@ using GnsMuhasebe.domain.Exceptions;
 using GnsMuhasebe.domain.Enums;
 using MediatR;
 
-namespace GnsMuhasebe.Application.Features.Commands.CreateCategory
+namespace GnsMuhasebe.Application.Features.Commands.CategoryCommands.CreateCategory
 {
     public class CreateCategoryCommand : IRequestHandler<CreateCategoryRequest, CreateCategoryResponse>
     {
@@ -20,7 +20,7 @@ namespace GnsMuhasebe.Application.Features.Commands.CreateCategory
         {
             CreateCategoryResponse response = new CreateCategoryResponse();
 
-            Category category = new Category(request.Name,request.Description ?? String.Empty);
+            Category category = new Category(request.Name,request.Description ?? string.Empty);
 
             await _categoryRepository.AddAsync(category);
             int result = await _categoryRepository.SaveChangesAsync(cancellationToken);

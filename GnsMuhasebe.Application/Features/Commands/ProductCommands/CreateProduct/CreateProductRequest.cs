@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace GnsMuhasebe.Application.Features.Commands.CreateProduct
+namespace GnsMuhasebe.Application.Features.Commands.ProductCommands.CreateProduct
 {
     public class CreateProductRequest : IRequest<CreateProductResponse>
     {
@@ -10,5 +10,6 @@ namespace GnsMuhasebe.Application.Features.Commands.CreateProduct
         public int Stock { get; set; }
         public decimal SalePrice { get; set; }
         public decimal PurchasePrice { get; set; }
+        public string? Barcode { get; set; } = string.Empty;
     }
 }

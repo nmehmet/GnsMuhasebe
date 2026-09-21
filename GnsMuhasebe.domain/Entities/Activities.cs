@@ -12,7 +12,7 @@
             /// </summary>
             Sale = 1,
             /// <summary>
-            /// Debt(2) = Selling without takin g money,
+            /// Debt(2) = Selling without taking money,
             /// </summary>
             Debt = 2,
             /// <summary>

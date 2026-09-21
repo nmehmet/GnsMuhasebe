@@ -22,6 +22,12 @@ namespace GnsMuhasebe.Application.Interfaces
         /// <param name="predicate">Specified Expression</param>
         /// <returns>Gets items that applies specified expression from <typeparamref name="T"/> table.</returns>
         Task<List<T>> GetWhereAsync(Expression<Func<T, bool>> predicate);
+        /// <summary>
+        /// Get item from <typeparamref name="T"/> table by predicate. If there is no item, returns null.
+        /// </summary>
+        /// <param name="predicate">Specified Expression</param>
+        /// <returns>Gets the first item that applies specified expression from <typeparamref name="T"/> table or null if no such item exists.</returns>
+        Task<T?> GetFirstOrDefaultAsync(Expression<Func<T, bool>> predicate);
 
         /// <summary>
         /// Adds new item to <typeparamref name="T"/> table.

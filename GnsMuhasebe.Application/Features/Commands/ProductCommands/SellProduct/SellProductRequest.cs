@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace GnsMuhasebe.Application.Features.Commands.SellProduct
+namespace GnsMuhasebe.Application.Features.Commands.ProductCommands.SellProduct
 {
     public class SellProductRequest : IRequest<SellProductResponse>
     {

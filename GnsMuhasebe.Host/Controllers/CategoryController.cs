@@ -1,4 +1,4 @@
-﻿using GnsMuhasebe.Application.Features.Commands.CreateCategory;
+﻿using GnsMuhasebe.Application.Features.Commands.CategoryCommands.CreateCategory;
 using GnsMuhasebe.Application.Interfaces;
 using GnsMuhasebe.domain.Entities;
 using MediatR;

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace GnsMuhasebe.Application.Features.Commands.AddProduct
+namespace GnsMuhasebe.Application.Features.Commands.ProductCommands.AddProduct
 {
     public class IncreaseProductStockRequest : IRequest<IncreaseProductStockResponse>
     {

@@ -4,7 +4,7 @@ using GnsMuhasebe.domain.Enums;
 using GnsMuhasebe.domain.Exceptions;
 using MediatR;
 
-namespace GnsMuhasebe.Application.Features.Commands.AddProduct
+namespace GnsMuhasebe.Application.Features.Commands.ProductCommands.AddProduct
 {
     public class IncreaseProductStockCommand : IRequestHandler<IncreaseProductStockRequest, IncreaseProductStockResponse>
     {

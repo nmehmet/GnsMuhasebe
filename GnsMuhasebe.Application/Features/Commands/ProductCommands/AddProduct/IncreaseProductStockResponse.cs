@@ -1,7 +1,7 @@
 ﻿using GnsMuhasebe.Application.Common;
 using GnsMuhasebe.domain.Entities;
 
-namespace GnsMuhasebe.Application.Features.Commands.AddProduct
+namespace GnsMuhasebe.Application.Features.Commands.ProductCommands.AddProduct
 {
     public class IncreaseProductStockResponse : BaseResponse
     {

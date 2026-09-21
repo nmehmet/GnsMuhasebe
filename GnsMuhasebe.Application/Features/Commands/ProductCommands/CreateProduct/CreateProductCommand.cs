@@ -5,7 +5,7 @@ using GnsMuhasebe.domain.Exceptions;
 using GnsMuhasebe.domain.Enums;
 using MediatR;
 
-namespace GnsMuhasebe.Application.Features.Commands.CreateProduct
+namespace GnsMuhasebe.Application.Features.Commands.ProductCommands.CreateProduct
 {
     public class CreateProductCommand : IRequestHandler<CreateProductRequest, CreateProductResponse>
     {
@@ -27,7 +27,7 @@ namespace GnsMuhasebe.Application.Features.Commands.CreateProduct
             if (request == null) throw new BusinessException(BusinessErrorCode.RequestIsEmpty);
             if (await categoryRepository.GetByIdAsync(request.CategoryId) == null) throw new BusinessException(BusinessErrorCode.CategoryCouldNotFound);
 
-            Product product = new Product(request.Name, request.CategoryId, request.Description ?? String.Empty, request.Stock, request.PurchasePrice, request.SalePrice);
+            Product product = new Product(request.Name, request.CategoryId, request.Description, request.Stock, request.PurchasePrice, request.SalePrice, request.Barcode);
             
             await productRepository.AddAsync(product);
             int result = await productRepository.SaveChangesAsync(cancellationToken);

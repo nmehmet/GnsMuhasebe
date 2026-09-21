@@ -5,7 +5,7 @@ using GnsMuhasebe.domain.Enums;
 using GnsMuhasebe.domain.Exceptions;
 using MediatR;
 
-namespace GnsMuhasebe.Application.Features.Commands.SellProduct
+namespace GnsMuhasebe.Application.Features.Commands.ProductCommands.SellProduct
 {
     public class SellProductCommand : IRequestHandler<SellProductRequest, SellProductResponse>
     {
@@ -18,6 +18,7 @@ namespace GnsMuhasebe.Application.Features.Commands.SellProduct
         }
         public async Task<SellProductResponse> Handle(SellProductRequest request, CancellationToken cancellationToken)
         {
+            if (request == null) throw new BusinessException(BusinessErrorCode.RequestIsEmpty);
             SellProductResponse response = new SellProductResponse();
             
             

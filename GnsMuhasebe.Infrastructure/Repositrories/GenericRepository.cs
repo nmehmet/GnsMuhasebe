@@ -30,6 +30,11 @@ namespace GnsMuhasebe.Infrastructure.Repositrories
             return await _context.Set<T>().Where(predicate).ToListAsync();
         }
 
+        public async Task<T?> GetFirstOrDefaultAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _context.Set<T>().Where(predicate).FirstOrDefaultAsync();
+        }
+
         public async Task AddAsync(T entity)
         {
             await _context.Set<T>().AddAsync(entity);
