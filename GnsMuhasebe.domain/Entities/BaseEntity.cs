@@ -9,7 +9,7 @@ namespace GnsMuhasebe.domain.Entities
         public DateTime UpdatedOn { get; private set; }
         public bool IsDeleted { get; private set; } = false;
 
-        public BaseEntity()
+        public void CreatedDate()
         {
             DateTime now = DateTime.Now;
             CreatedOn = new DateTime(now.Year, now.Month, now.Day, now.Hour, now.Minute, now.Second);

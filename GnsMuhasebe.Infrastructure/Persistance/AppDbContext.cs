@@ -27,5 +27,24 @@ namespace GnsMuhasebe.Infrastructure.Persistance
 
             // Configure entity properties and relationships here if needed
         }
+
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            var entries = ChangeTracker.Entries<BaseEntity>();
+
+            foreach (var entry in entries)
+            {
+                if(entry.State == EntityState.Added)
+                {
+                    entry.Entity.CreatedDate();
+                }
+                else if(entry.State == EntityState.Modified)
+                {
+                    entry.Entity.UpdateDate();
+                }
+            }
+
+            return base.SaveChangesAsync(cancellationToken);
+        }
     }
 }
