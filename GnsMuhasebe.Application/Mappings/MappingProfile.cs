@@ -2,6 +2,7 @@
 using GnsMuhasebe.Application.DTOs.Products;
 using GnsMuhasebe.Application.Features.Commands.CategoryCommands.CreateCategory;
 using GnsMuhasebe.Application.Features.Commands.ProductCommands.CreateProduct;
+using GnsMuhasebe.Application.Features.Queries.ProductQueries.GetProductById;
 using GnsMuhasebe.domain.Entities;
 
 namespace GnsMuhasebe.Application.Mappings
@@ -13,6 +14,7 @@ namespace GnsMuhasebe.Application.Mappings
             CreateMap<Product,CreateProductRequest>().ReverseMap();
             CreateMap<Category, CreateCategoryRequest>().ReverseMap();
             CreateMap<Product, GetAllProductsDTO>().ReverseMap();   
+            CreateMap<Product, GetProductByIdQueryResponse>().ReverseMap();
         }
     }
 }

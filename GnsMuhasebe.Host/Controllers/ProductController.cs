@@ -2,6 +2,7 @@
 using GnsMuhasebe.Application.Features.Commands.ProductCommands.SellProduct;
 using GnsMuhasebe.Application.Features.Queries.ProductQueries.GetAllProducts;
 using GnsMuhasebe.Application.Features.Queries.ProductQueries.GetProductByBarcode;
+using GnsMuhasebe.Application.Features.Queries.ProductQueries.GetProductById;
 using GnsMuhasebe.Application.Interfaces;
 using GnsMuhasebe.domain.Entities;
 using MediatR;
@@ -34,10 +35,20 @@ namespace Güneş_Muhasebe.Controllers
             SellProductResponse response = await _mediator.Send(request);
             return StatusCode(response.Status, response);
         }
-        [HttpGet("GetProductById/{Id:int}")]
-        public async Task<Product> GetProductById(int Id)
+        [HttpGet("GetProductByIdDebug/{Id:int}")]
+        public async Task<Product> GetProductByIdDebug(int Id)
         {
             return await _productRepository.GetByIdAsync(Id) ?? new Product();
+        }
+        [HttpGet("GetProductById/{Id:int}")]
+        public async Task<GetProductByIdQueryResponse> GetProductById(int Id)
+        {
+            GetProductByIdQueryRequest request = new GetProductByIdQueryRequest
+            {
+                Id = Id
+            };
+            GetProductByIdQueryResponse response = await _mediator.Send(request);
+            return response;
         }
         [HttpGet("GetPrductByBarcode/{Barcode}")]
         public async Task<IActionResult> GetProductByBarcode(string Barcode)

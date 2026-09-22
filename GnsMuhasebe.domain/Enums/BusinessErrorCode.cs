@@ -20,6 +20,7 @@
         InvalidPurchasePrice = 1010,
         InvalidQuantity = 1011,
         InvalidBarcodeProduct = 1012,
+        InvalidRequest = 1013,
 
         // 1100 - Category errors
         InvalidCategoryName = 1101,

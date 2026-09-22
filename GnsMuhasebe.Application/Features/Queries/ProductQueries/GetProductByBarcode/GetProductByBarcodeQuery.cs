@@ -8,7 +8,7 @@ namespace GnsMuhasebe.Application.Features.Queries.ProductQueries.GetProductByBa
     internal class GetProductByBarcodeQuery : IRequestHandler<GetProductByBarcodeQueryRequest, GetProductByBarcodeQueryResponse>
     {
         private readonly IGenericRepository<domain.Entities.Product> _productRepository;
-        public GetProductByBarcodeQuery(IGenericRepository<domain.Entities.Product> productRepository)
+        public GetProductByBarcodeQuery(IGenericRepository<Product> productRepository)
         {
             _productRepository = productRepository;
         }
