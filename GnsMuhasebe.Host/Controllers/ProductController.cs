@@ -1,5 +1,6 @@
 ﻿using GnsMuhasebe.Application.Features.Commands.ProductCommands.CreateProduct;
 using GnsMuhasebe.Application.Features.Commands.ProductCommands.SellProduct;
+using GnsMuhasebe.Application.Features.Commands.ProductCommands.UpdateProduct;
 using GnsMuhasebe.Application.Features.Queries.ProductQueries.GetAllProducts;
 using GnsMuhasebe.Application.Features.Queries.ProductQueries.GetProductByBarcode;
 using GnsMuhasebe.Application.Features.Queries.ProductQueries.GetProductById;
@@ -21,12 +22,15 @@ namespace Güneş_Muhasebe.Controllers
             _mediator = mediator;
             _productRepository = productRepository;
         }
+        //---------------------Commands---------------------
+        //Add a new product to the database
         [HttpPost("CreateProduct")]
         public async Task<IActionResult> CreateProduct(CreateProductRequest request)
         {
             CreateProductResponse response = await _mediator.Send(request);
             return StatusCode(response.Status, response);
         }
+        //Sells a product form databasa and updates the quantity of the product in the database
         [HttpPost("SellProduct/{Id:int}/{Quantity:int}")]
         public async Task<IActionResult> SellProduct(SellProductRequest request, int Id, int Quantity)
         {
@@ -35,6 +39,15 @@ namespace Güneş_Muhasebe.Controllers
             SellProductResponse response = await _mediator.Send(request);
             return StatusCode(response.Status, response);
         }
+        //Updates a product in the database
+        [HttpPost("UpdateProduct")]
+        public async Task<IActionResult> UpdateProduct(UpdateProductCommandRequest request)
+        {
+            UpdateProductCommandResponse response = await _mediator.Send(request);
+            return StatusCode(response.Status, response);
+        }
+
+        //---------------------Queries---------------------
         [HttpGet("GetProductByIdDebug/{Id:int}")]
         public async Task<Product> GetProductByIdDebug(int Id)
         {

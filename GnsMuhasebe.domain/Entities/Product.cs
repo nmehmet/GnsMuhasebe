@@ -52,5 +52,19 @@ namespace GnsMuhasebe.domain.Entities
             if (quantity <= 0) throw new BusinessException(BusinessErrorCode.InvalidQuantity);
             Stock += quantity;
         }
+
+        public void UpdateProduct(string name, int categoryId, string? desc, decimal purchasePrice, decimal salePrice, string? Barcode)
+        {
+            if (String.IsNullOrEmpty(name)) throw new BusinessException(BusinessErrorCode.InvalidProductName);
+            if (PurchasePrice < 0) throw new BusinessException(BusinessErrorCode.InvalidPurchasePrice);
+            if (SalePrice <= 0) throw new BusinessException(BusinessErrorCode.InvalidSalePrice);
+
+            Name = name;
+            CategoryId = categoryId;
+            Description = desc??string.Empty;
+            PurchasePrice = purchasePrice;
+            SalePrice = salePrice;
+            this.Barcode = Barcode??string.Empty;
+        }
     }
 }
